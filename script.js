@@ -1,77 +1,59 @@
 const questions = [
     {
-        question: "Which flower is the national flower of Pakistan?",
+        question: "Which ancient city of the Indus Valley Civilization is located in present-day Sindh, Pakistan?",
         answers: [
-            { text: "Rose", correct: false },
-            { text: "Jasmine", correct: true },
-            { text: "Sunflower", correct: false },
-            { text: "Lily", correct: false }
+            { text: "Taxila", correct: false },
+            { text: "Harappa", correct: false },
+            { text: "Mohenjo-Daro", correct: true },
+            { text: "Mehrgarh", correct: false }
         ]
     },
     {
-        question: "What is the traditional dress of Pakistan?",
+        question: "In which year was Urdu declared the national language of Pakistan?",
         answers: [
-            { text: "Kurta Pajama", correct: false },
-            { text: "Shalwar Kameez", correct: true },
-            { text: "Sherwani", correct: false },
-            { text: "Sari", correct: false }
+            { text: "1948", correct: true },
+            { text: "1956", correct: false },
+            { text: "1973", correct: false },
+            { text: "1962", correct: false }
         ]
     },
     {
-        question: "Which is a popular Pakistani folk dance from Punjab?",
+        question: "Which Pakistani Sufi poet is known for his Sindhi poetry and the work 'Shah Jo Risalo'?",
         answers: [
-            { text: "Bhangra", correct: true },
-            { text: "Attan", correct: false },
-            { text: "Kathak", correct: false },
-            { text: "Bharatanatyam", correct: false }
+            { text: "Bulleh Shah", correct: false },
+            { text: "Shah Abdul Latif Bhittai", correct: true },
+            { text: "Sachal Sarmast", correct: false },
+            { text: "Rehman Baba", correct: false }
         ]
     },
     {
-        question: "What is 'Eid-ul-Fitr' celebrated for?",
+        question: "The iconic 'Minar-e-Pakistan' was completed in which year?",
         answers: [
-            { text: "The end of Hajj", correct: false },
-            { text: "Beginning of Ramadan", correct: false },
-            { text: "End of Ramadan", correct: true },
-            { text: "Start of Muharram", correct: false }
+            { text: "1947", correct: false },
+            { text: "1968", correct: true },
+            { text: "1951", correct: false },
+            { text: "1971", correct: false }
         ]
     },
     {
-        question: "Which city is known as the cultural capital of Pakistan?",
+        question: "Which traditional Pakistani musical instrument has strings and is widely used in classical music?",
         answers: [
-            { text: "Karachi", correct: false },
-            { text: "Lahore", correct: true },
-            { text: "Islamabad", correct: false },
-            { text: "Peshawar", correct: false }
+            { text: "Bansuri", correct: false },
+            { text: "Tabla", correct: false },
+            { text: "Sitar", correct: true },
+            { text: "Dhol", correct: false }
         ]
     },
     {
-        question: "What is the staple food in most Pakistani meals?",
+        question: "What is the original script used for writing Punjabi in Pakistan?",
         answers: [
-            { text: "Rice", correct: false },
-            { text: "Roti", correct: true },
-            { text: "Pasta", correct: false },
-            { text: "Bread", correct: false }
+            { text: "Devanagari", correct: false },
+            { text: "Arabic script (Shahmukhi)", correct: true },
+            { text: "Roman", correct: false },
+            { text: "Gurmukhi", correct: false }
         ]
     },
-    {
-        question: "Who is known as the national poet of Pakistan?",
-        answers: [
-            { text: "Mirza Ghalib", correct: false },
-            { text: "Allama Iqbal", correct: true },
-            { text: "Faiz Ahmed Faiz", correct: false },
-            { text: "Habib Jalib", correct: false }
-        ]
-    },
-    {
-        question: "Which province is famous for 'Sindhi Ajrak' and cap?",
-        answers: [
-            { text: "Punjab", correct: false },
-            { text: "Khyber Pakhtunkhwa", correct: false },
-            { text: "Sindh", correct: true },
-            { text: "Balochistan", correct: false }
-        ]
-    },
-    {
+     {
         question: "What is the famous truck art in Pakistan known for?",
         answers: [
             { text: "Minimalism", correct: false },
@@ -81,12 +63,30 @@ const questions = [
         ]
     },
     {
-        question: "Which Pakistani musician is known worldwide for Qawwali?",
+        question: "Which Pakistani monument features verses of the Quran in calligraphy and was designed by Vedat Dalokay?",
         answers: [
-            { text: "Nusrat Fateh Ali Khan", correct: true },
-            { text: "Atif Aslam", correct: false },
-            { text: "Ali Zafar", correct: false },
-            { text: "Rahat Fateh Ali Khan", correct: false }
+            { text: "Minar-e-Pakistan", correct: false },
+            { text: "Mazar-e-Quaid", correct: false },
+            { text: "Faisal Mosque", correct: true },
+            { text: "Badshahi Mosque", correct: false }
+        ]
+    },
+    {
+        question: "Which UNESCO World Heritage site in Pakistan is a Mughal architectural masterpiece built in the 17th century?",
+        answers: [
+            { text: "Derawar Fort", correct: false },
+            { text: "Rohtas Fort", correct: false },
+            { text: "Shalimar Gardens", correct: true },
+            { text: "Makli Necropolis", correct: false }
+        ]
+    },
+    {
+        question: "Which traditional food item is most commonly associated with Sehri in Punjab during Ramadan?",
+        answers: [
+            { text: "Siri Paye", correct: true },
+            { text: "Haleem", correct: false },
+            { text: "Nihari", correct: false },
+            { text: "Chapli Kabab", correct: false }
         ]
     }
 ];
@@ -110,7 +110,7 @@ const tryAgainBtn = document.getElementById('try-again-btn');
 
 let shuffledQuestions, currentQuestionIndex;
 let score = 0;
-let timeLeft = 60; // Initial time in seconds
+let timeLeft = 100; // Initial time in seconds
 let timerInterval;
 let quizStartTime;
 
@@ -127,7 +127,7 @@ function startQuiz() {
     quizPage.classList.add('active');
     score = 0;
     scoreDisplay.textContent = `Score: ${score}`;
-    timeLeft = 60; // Reset time
+    timeLeft = 100; // Reset time
     timerDisplay.textContent = `Time Left: ${timeLeft}s`;
     quizStartTime = Date.now(); // Record start time
     shuffledQuestions = questions.sort(() => Math.random() - 0.5);
