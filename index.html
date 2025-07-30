@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizNest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="start-page" class="page active">
+            <h1>Test Your Knowledge!</h1>
+            <p>Test your knowledge with these exciting questions.</p>
+            <p>You'll have 60 seconds to complete the quiz.</p>
+            <button id="start-quiz-btn">Start Quiz</button>
+        </div>
+
+        <div id="quiz-page" class="page">
+            <div class="header">
+                <div id="score-display">Score: 0</div>
+                <div id="timer-display">Time Left: 60s</div>
+            </div>
+            <h2 id="question-text">Question text goes here?</h2>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+            <button id="next-btn" class="hide">Next</button>
+        </div>
+
+        <div id="result-page" class="page">
+            <h2>Quiz Finished!</h2>
+            <p>You answered <span id="final-score">0</span> out of <span id="total-questions">0</span> questions correctly.</p>
+            <p>Your percentage: <span id="percentage-score">0%</span></p>
+            <p id="time-taken-display">Time taken: 0s</p>
+            <button id="try-again-btn">Try Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
